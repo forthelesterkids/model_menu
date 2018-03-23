@@ -49,15 +49,13 @@ public class ProfileTests {
 
     @Test
     public void profileBuilderTest(){
-        DailyProfileBuilder builder = new DailyProfileBuilder();
         Food f1 = new Food("cabbage");
         Food f2 = new Food("chicken");
         Food f3 = new Food("ham");
         Food f4 = new Food("pumpkin");
 
         Food[] foods = {f1, f2, f3, f4};
-        builder.buildProfileForDay(foods);
-        DailyProfile dailyProfile = builder.getDailyProfile();
+        DailyProfile dailyProfile = new DailyProfileBuilder().addFoods(foods).buildDailyProfile();
         System.out.println(dailyProfile.toString());
     }
 }

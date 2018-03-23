@@ -1,9 +1,12 @@
 package com.brandedb.modelmenu.model;
 
+import android.support.annotation.NonNull;
+
+import java.net.CookieHandler;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class DailyProfile {
+public class DailyProfile implements Comparable<DailyProfile> {
 
     private Collection<Profile> profiles = new ArrayList<>();
 
@@ -19,5 +22,10 @@ public class DailyProfile {
             builder.append("\n");
         }
         return builder.toString();
+    }
+
+    @Override
+    public int compareTo(@NonNull DailyProfile other) {
+        return profiles.equals(other.profiles) ? 0 : -1;
     }
 }
