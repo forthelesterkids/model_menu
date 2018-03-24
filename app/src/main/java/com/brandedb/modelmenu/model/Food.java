@@ -2,6 +2,8 @@ package com.brandedb.modelmenu.model;
 
 import android.support.annotation.NonNull;
 
+import java.util.Objects;
+
 public class Food {
 
     private final String name;
@@ -21,5 +23,10 @@ public class Food {
             return false;
         }
         return object instanceof Food ? name.equalsIgnoreCase(((Food)object).name) : false;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(name);
     }
 }

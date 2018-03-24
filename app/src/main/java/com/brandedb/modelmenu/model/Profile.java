@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 
 public class Profile {
 
@@ -25,6 +26,11 @@ public class Profile {
             builder.append(":");
         }
         return builder.toString();
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(foods);
     }
 
 }

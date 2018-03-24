@@ -3,6 +3,8 @@ package com.brandedb.modelmenu.model;
 
 import android.support.annotation.NonNull;
 
+import java.util.Objects;
+
 public class QualifyingEvent {
 
     private final String eventName;
@@ -18,5 +20,10 @@ public class QualifyingEvent {
         }
 
         return object instanceof QualifyingEvent ? eventName.equalsIgnoreCase(((QualifyingEvent)object).eventName) : false;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(eventName);
     }
 }
