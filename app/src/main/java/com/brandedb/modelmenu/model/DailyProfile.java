@@ -6,7 +6,7 @@ import java.net.CookieHandler;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class DailyProfile implements Comparable<DailyProfile> {
+public class DailyProfile {
 
     private Collection<Profile> profiles = new ArrayList<>();
 
@@ -24,8 +24,4 @@ public class DailyProfile implements Comparable<DailyProfile> {
         return builder.toString();
     }
 
-    @Override
-    public int compareTo(@NonNull DailyProfile other) {
-        return profiles.equals(other.profiles) ? 0 : -1;
-    }
 }

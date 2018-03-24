@@ -5,12 +5,16 @@ import android.support.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Profile implements Comparable<Profile> {
+public class Profile {
 
     private Collection<Food> foods = new ArrayList<>();
 
     public void addFood(Food food){
         foods.add(food);
+    }
+
+    public Collection<Food> getFoods(){
+        return foods;
     }
 
     @Override
@@ -23,8 +27,4 @@ public class Profile implements Comparable<Profile> {
         return builder.toString();
     }
 
-    @Override
-    public int compareTo(@NonNull Profile other) {
-        return foods.equals(other.foods) ? 0 : -1;
-    }
 }

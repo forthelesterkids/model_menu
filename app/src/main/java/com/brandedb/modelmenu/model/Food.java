@@ -2,7 +2,7 @@ package com.brandedb.modelmenu.model;
 
 import android.support.annotation.NonNull;
 
-public class Food implements Comparable<Food> {
+public class Food {
 
     private final String name;
 
@@ -12,11 +12,14 @@ public class Food implements Comparable<Food> {
 
     @Override
     public String toString(){
-        return "Name:" + name;
+        return name;
     }
 
     @Override
-    public int compareTo(@NonNull Food other) {
-        return name.compareTo(other.name);
+    public boolean equals(@NonNull Object object){
+        if (object == null) {
+            return false;
+        }
+        return object instanceof Food ? name.equalsIgnoreCase(((Food)object).name) : false;
     }
 }

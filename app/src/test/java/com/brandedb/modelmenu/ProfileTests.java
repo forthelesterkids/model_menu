@@ -3,6 +3,7 @@ package com.brandedb.modelmenu;
 import com.brandedb.modelmenu.model.DailyProfile;
 import com.brandedb.modelmenu.model.Food;
 import com.brandedb.modelmenu.model.Profile;
+import com.brandedb.modelmenu.model.QualifyingEvent;
 import com.brandedb.modelmenu.profiler.DailyProfileBuilder;
 
 import org.junit.Assert;
@@ -11,7 +12,7 @@ import org.junit.Test;
 public class ProfileTests {
 
     @Test
-    public void testProfilesAreEqual(){
+    public void testProfilesAreEqual() {
         Food f1 = new Food("cabbage");
         Food f2 = new Food("chicken");
         Food f3 = new Food("ham");
@@ -26,11 +27,11 @@ public class ProfileTests {
         p2.addFood(f2);
         p2.addFood(f3);
 
-        Assert.assertTrue(p1.compareTo(p2) == 0);
+        Assert.assertTrue(p1.getFoods().equals(p2.getFoods()));
     }
 
     @Test
-    public void testProfilesAreNotEqual(){
+    public void testProfilesAreNotEqual() {
         Food f1 = new Food("cabbage");
         Food f2 = new Food("chicken");
         Food f3 = new Food("ham");
@@ -44,11 +45,11 @@ public class ProfileTests {
         p2.addFood(f1);
         p2.addFood(f2);
 
-        Assert.assertFalse(p1.compareTo(p2) == 0);
+        Assert.assertFalse(p1.getFoods().equals(p2.getFoods()));
     }
 
     @Test
-    public void profileBuilderTest(){
+    public void profileBuilderTest() {
         Food f1 = new Food("cabbage");
         Food f2 = new Food("chicken");
         Food f3 = new Food("ham");
@@ -57,5 +58,25 @@ public class ProfileTests {
         Food[] foods = {f1, f2, f3, f4};
         DailyProfile dailyProfile = new DailyProfileBuilder().addFoods(foods).buildDailyProfile();
         System.out.println(dailyProfile.toString());
+    }
+
+    @Test
+    public void qualifyingEventIsEqual() {
+
+
+        QualifyingEvent q1 = new QualifyingEvent("headache");
+        QualifyingEvent q2 = new QualifyingEvent("Headache");
+
+        Assert.assertEquals(q1, q2);
+    }
+
+    @Test
+    public void qualifyingEventNotEqual() {
+
+
+        QualifyingEvent q1 = new QualifyingEvent("headaches");
+        QualifyingEvent q2 = new QualifyingEvent("Headache");
+
+        Assert.assertNotEquals(q1, q2);
     }
 }
