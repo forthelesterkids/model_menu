@@ -25,8 +25,9 @@ public class QualifyingEvent {
         else if (object instanceof QualifyingEvent){
             QualifyingEvent qualifyingEvent = (QualifyingEvent)object;
             return (qualifyingEvent.instant.equals(instant) && qualifyingEvent.eventName.equalsIgnoreCase(eventName));
+        } else {
+            return false;
         }
-        return false;
     }
 
     @Override
