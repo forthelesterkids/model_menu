@@ -24,11 +24,7 @@ public class QualifyingEvent {
         }
         else if (object instanceof QualifyingEvent){
             QualifyingEvent qualifyingEvent = (QualifyingEvent)object;
-            if(qualifyingEvent.instant.equals(instant) && qualifyingEvent.eventName.equalsIgnoreCase(eventName)){
-                return true;
-            } else {
-                return false;
-            }
+            return (qualifyingEvent.instant.equals(instant) && qualifyingEvent.eventName.equalsIgnoreCase(eventName));
         }
         return false;
     }
