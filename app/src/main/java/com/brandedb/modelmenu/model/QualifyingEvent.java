@@ -12,7 +12,7 @@ public class QualifyingEvent {
     private final String eventName;
     private final Instant instant;
 
-    public QualifyingEvent(String eventName, Instant instant){
+    public QualifyingEvent(@NonNull String eventName, @NonNull Instant instant){
         this.eventName = eventName;
         this.instant = instant;
     }

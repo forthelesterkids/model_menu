@@ -2,7 +2,6 @@ package com.brandedb.modelmenu.model;
 
 import android.support.annotation.NonNull;
 
-import java.net.CookieHandler;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -10,7 +9,7 @@ public class DailyProfile {
 
     private Collection<Profile> profiles = new ArrayList<>();
 
-    public void addProfile(Profile profile){
+    public void addProfile(@NonNull Profile profile){
         profiles.add(profile);
     }
 

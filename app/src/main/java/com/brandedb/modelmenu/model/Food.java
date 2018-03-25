@@ -8,7 +8,7 @@ public class Food {
 
     private final String name;
 
-    public Food(String name){
+    public Food(@NonNull String name){
         this.name = name;
     }
 

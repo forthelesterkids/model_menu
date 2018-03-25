@@ -10,7 +10,7 @@ public class Profile {
 
     private Collection<Food> foods = new ArrayList<>();
 
-    public void addFood(Food food){
+    public void addFood(@NonNull Food food){
         foods.add(food);
     }
 
