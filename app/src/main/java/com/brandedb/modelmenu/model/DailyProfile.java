@@ -9,7 +9,7 @@ public class DailyProfile {
 
     private Collection<Profile> profiles = new ArrayList<>();
 
-    public void addProfile(@NonNull Profile profile){
+    public void addProfile(Profile profile){
         profiles.add(profile);
     }
 

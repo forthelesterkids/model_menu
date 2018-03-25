@@ -12,13 +12,13 @@ public class QualifyingEvent {
     private final String eventName;
     private final Instant instant;
 
-    public QualifyingEvent(@NonNull String eventName, @NonNull Instant instant){
+    public QualifyingEvent(String eventName, Instant instant){
         this.eventName = eventName;
         this.instant = instant;
     }
 
     @Override
-    public boolean equals(@NonNull Object object){
+    public boolean equals(Object object){
         if(object == null){
             return false;
         } else if (object instanceof QualifyingEvent){
