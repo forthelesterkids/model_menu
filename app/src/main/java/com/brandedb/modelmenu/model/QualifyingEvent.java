@@ -21,8 +21,7 @@ public class QualifyingEvent {
     public boolean equals(@NonNull Object object){
         if(object == null){
             return false;
-        }
-        else if (object instanceof QualifyingEvent){
+        } else if (object instanceof QualifyingEvent){
             QualifyingEvent qualifyingEvent = (QualifyingEvent)object;
             return (qualifyingEvent.instant.equals(instant) && qualifyingEvent.eventName.equalsIgnoreCase(eventName));
         } else {
