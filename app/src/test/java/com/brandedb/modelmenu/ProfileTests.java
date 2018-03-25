@@ -6,6 +6,7 @@ import com.brandedb.modelmenu.model.Profile;
 import com.brandedb.modelmenu.model.QualifyingEvent;
 import com.brandedb.modelmenu.profiler.DailyProfileBuilder;
 
+import org.joda.time.Instant;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -63,9 +64,8 @@ public class ProfileTests {
     @Test
     public void qualifyingEventIsEqual() {
 
-
-        QualifyingEvent q1 = new QualifyingEvent("headache");
-        QualifyingEvent q2 = new QualifyingEvent("Headache");
+        QualifyingEvent q1 = new QualifyingEvent("headache", new Instant(1L));
+        QualifyingEvent q2 = new QualifyingEvent("Headache", new Instant(1L));
 
         Assert.assertEquals(q1, q2);
     }
@@ -73,9 +73,8 @@ public class ProfileTests {
     @Test
     public void qualifyingEventNotEqual() {
 
-
-        QualifyingEvent q1 = new QualifyingEvent("headaches");
-        QualifyingEvent q2 = new QualifyingEvent("Headache");
+        QualifyingEvent q1 = new QualifyingEvent("headaches", new Instant(1L));
+        QualifyingEvent q2 = new QualifyingEvent("Headache", new Instant(1L));
 
         Assert.assertNotEquals(q1, q2);
     }
